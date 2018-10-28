@@ -36,16 +36,15 @@ console.log(result);
  */
 
 //2.1
-function sumFold(a,b) {
+function sumWithDefaults(a,b) {
   return a + b;
 }
 
-var result = sumFold(10, 5);
+var result = sumWithDefaults(10, 5);
 console.log(result);
 
 //2.1 *
-function sumWithDefaults(a, b) {
-  var b = 100;
+function sumWithDefaults(a, b = 100) {
   return a + b;
 }
 
@@ -79,7 +78,7 @@ function returnFnResult(fn) {
    console.log(f()); // выведет 12
    console.log(f()); // выведет 13
  */
-function returnCounter(number) {
+function returnCounter(number = 0) {
   var num = function() {
     return ++number;
   }
