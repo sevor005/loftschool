@@ -1,6 +1,5 @@
 /* ДЗ 1 - Функции */
 
-
 /*
  Задание 1:
 
@@ -18,7 +17,6 @@ function returnFirstArgument(a) {
 }
 var result = returnFirstArgument(5);
 console.log(result);
-
 
 /*
  Задание 2:
@@ -51,7 +49,6 @@ function sumWithDefaults(a, b = 100) {
 var result = sumWithDefaults(10);
 console.log(result);
 
-
 /*
  Задание 3:
 
@@ -63,7 +60,6 @@ console.log(result);
 function returnFnResult(fn) {
   return fn();
 }
-
 
 /*
  Задание 4:
@@ -90,9 +86,6 @@ console.log(result());
 console.log(result());
 console.log(result());
 
-
-
-
 /*
  Задание 5 *:
 
@@ -113,9 +106,6 @@ function returnArgumentsArray() {
 
 var result = returnArgumentsArray(10, 15, 14, 22, 'helloy', 'h1', 88);
 console.log(result);
-
-
-
 
 /*
  Задание 6 *:
