@@ -125,6 +125,7 @@ console.log(result);
 function bindFunction(fn) {
 }
 
+
 export {
     returnFirstArgument,
     sumWithDefaults,
