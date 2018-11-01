@@ -6,7 +6,10 @@
  Напишите аналог встроенного метода forEach для работы с массивами
  Посмотрите как работает forEach и повторите это поведение для массива, который будет передан в параметре array
  */
-function forEach(array, fn) {
+function forEach(array, fn){
+  for(let i = 0; i < array.length; i++) {
+    fn(array[i], i, array);
+  }
 }
 
 /*
@@ -16,6 +19,14 @@ function forEach(array, fn) {
  Посмотрите как работает map и повторите это поведение для массива, который будет передан в параметре array
  */
 function map(array, fn) {
+  let newArrays = [];
+
+  for(let i = 0; i < array.length; i++) {
+    let arrays = fn(array[i], i, array);
+    newArrays.push(arrays);
+  }
+
+  return newArrays;
 }
 
 /*
@@ -25,6 +36,22 @@ function map(array, fn) {
  Посмотрите как работает reduce и повторите это поведение для массива, который будет передан в параметре array
  */
 function reduce(array, fn, initial) {
+  let result;
+
+  if(initial) {
+    result = initial;
+    for(let i = 0; i < array.length; i++) {
+      result = fn(result, array[i], i, array);
+    }
+
+  } else {
+    result = array[0];
+    for(let i = 1; i < array.length; i++) {
+      result = fn(result, array[i], i, array);
+    }
+  }
+
+  return result;
 }
 
 /*
@@ -36,6 +63,13 @@ function reduce(array, fn, initial) {
    upperProps({ name: 'Сергей', lastName: 'Петров' }) вернет ['NAME', 'LASTNAME']
  */
 function upperProps(obj) {
+  var newArray = [];
+
+  for(var upperName in obj) {
+    newArray.push(upperName.toUpperCase());
+  }
+
+  return newArray;
 }
 
 /*
@@ -44,7 +78,30 @@ function upperProps(obj) {
  Напишите аналог встроенного метода slice для работы с массивами
  Посмотрите как работает slice и повторите это поведение для массива, который будет передан в параметре array
  */
-function slice(array, from, to) {
+function slice(array, from = 0, to = array.length) {
+  var newArray = [];
+
+  if(to < 0) {
+    to = to + array.length;
+  }
+  
+  if(to > array.length) {
+    to = array.length;
+  }
+
+  if(from < 0) {
+    from = from + array.length;
+  }
+
+  if(from < 0) {
+    from = 0;
+  }
+
+  for(let i = from; i < to; i++) {
+    newArray.push(array[i]);
+  }
+
+  return newArray;
 }
 
 /*
